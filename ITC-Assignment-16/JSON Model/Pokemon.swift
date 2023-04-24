@@ -13,13 +13,13 @@
 import Foundation
 
 // MARK: - Tech
-struct Tech: Codable {
+struct Pokemon: Decodable {
     let data: [Datum]
     let page, pageSize, count, totalCount: Int
 }
 
 // MARK: - Datum
-struct Datum: Codable {
+struct Datum: Decodable {
     let id, name: String
     let supertype: Supertype
     let subtypes: [Subtype]
@@ -53,12 +53,12 @@ struct Datum: Codable {
 }
 
 // MARK: - Ability
-struct Ability: Codable {
+struct Ability: Decodable {
     let name, text: String
     let type: TypeEnum
 }
 
-enum TypeEnum: String, Codable {
+enum TypeEnum: String, Decodable {
     case ability = "Ability"
     case pokéBody = "Poké-Body"
     case pokéPower = "Poké-Power"
@@ -66,14 +66,14 @@ enum TypeEnum: String, Codable {
 }
 
 // MARK: - Attack
-struct Attack: Codable {
+struct Attack: Decodable {
     let name: String
     let cost: [RetreatCost]
     let convertedEnergyCost: Int
     let damage, text: String
 }
 
-enum RetreatCost: String, Codable {
+enum RetreatCost: String, Decodable {
     case colorless = "Colorless"
     case darkness = "Darkness"
     case dragon = "Dragon"
@@ -87,19 +87,19 @@ enum RetreatCost: String, Codable {
 }
 
 // MARK: - Cardmarket
-struct Cardmarket: Codable {
+struct Cardmarket: Decodable {
     let url: String
     let updatedAt: UpdatedAt
     let prices: [String: Double]
 }
 
-enum UpdatedAt: String, Codable {
+enum UpdatedAt: String, Decodable {
     case the20230327 = "2023/03/27"
     case the20230424 = "2023/04/24"
 }
 
 // MARK: - Set
-struct Set: Codable {
+struct Set: Decodable {
     let id, name: String
     let series: Series
     let printedTotal, total: Int
@@ -110,21 +110,21 @@ struct Set: Codable {
 }
 
 // MARK: - SetImages
-struct SetImages: Codable {
+struct SetImages: Decodable {
     let symbol, logo: String
 }
 
 // MARK: - Legalities
-struct Legalities: Codable {
+struct Legalities: Decodable {
     let unlimited: Expanded
     let expanded, standard: Expanded?
 }
 
-enum Expanded: String, Codable {
+enum Expanded: String, Decodable {
     case legal = "Legal"
 }
 
-enum Series: String, Codable {
+enum Series: String, Decodable {
     case base = "Base"
     case blackWhite = "Black & White"
     case diamondPearl = "Diamond & Pearl"
@@ -142,11 +142,11 @@ enum Series: String, Codable {
 }
 
 // MARK: - DatumImages
-struct DatumImages: Codable {
+struct DatumImages: Decodable {
     let small, large: String
 }
 
-enum Rarity: String, Codable {
+enum Rarity: String, Decodable {
     case common = "Common"
     case promo = "Promo"
     case rare = "Rare"
@@ -159,12 +159,12 @@ enum Rarity: String, Codable {
 }
 
 // MARK: - Resistance
-struct Resistance: Codable {
+struct Resistance: Decodable {
     let type: RetreatCost
     let value: String
 }
 
-enum Subtype: String, Codable {
+enum Subtype: String, Decodable {
     case basic = "Basic"
     case ex = "EX"
     case gx = "GX"
@@ -178,19 +178,19 @@ enum Subtype: String, Codable {
     case v = "V"
 }
 
-enum Supertype: String, Codable {
+enum Supertype: String, Decodable {
     case pokémon = "Pokémon"
 }
 
 // MARK: - Tcgplayer
-struct Tcgplayer: Codable {
+struct Tcgplayer: Decodable {
     let url: String
     let updatedAt: UpdatedAt
     let prices: Prices
 }
 
 // MARK: - Prices
-struct Prices: Codable {
+struct Prices: Decodable {
     let holofoil, reverseHolofoil, normal, the1StEditionHolofoil: The1_StEditionHolofoil?
     let unlimitedHolofoil: The1_StEditionHolofoil?
 
@@ -202,7 +202,9 @@ struct Prices: Codable {
 }
 
 // MARK: - The1_StEditionHolofoil
-struct The1_StEditionHolofoil: Codable {
+struct The1_StEditionHolofoil: Decodable {
     let low, mid, high: Double
     let market, directLow: Double?
 }
+
+typealias~ Pokemon

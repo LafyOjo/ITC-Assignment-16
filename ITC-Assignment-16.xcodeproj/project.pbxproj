@@ -15,6 +15,9 @@
 		85752A2929F708FB00F541C3 /* ITC_Assignment_16UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A2829F708FB00F541C3 /* ITC_Assignment_16UITests.swift */; };
 		85752A2B29F708FB00F541C3 /* ITC_Assignment_16UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A2A29F708FB00F541C3 /* ITC_Assignment_16UITestsLaunchTests.swift */; };
 		85752A3929F70E1100F541C3 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A3829F70E1100F541C3 /* Pokemon.swift */; };
+		85752A3C29F7177E00F541C3 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A3B29F7177E00F541C3 /* APIEndpoint.swift */; };
+		85752A3F29F7188C00F541C3 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A3E29F7188C00F541C3 /* ListViewModel.swift */; };
+		85752A4329F71D1000F541C3 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A4229F71D1000F541C3 /* PokemonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		85752A2829F708FB00F541C3 /* ITC_Assignment_16UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITC_Assignment_16UITests.swift; sourceTree = "<group>"; };
 		85752A2A29F708FB00F541C3 /* ITC_Assignment_16UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITC_Assignment_16UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		85752A3829F70E1100F541C3 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		85752A3B29F7177E00F541C3 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		85752A3E29F7188C00F541C3 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewModel.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/ListViewModel.swift"; sourceTree = "<group>"; };
+		85752A4229F71D1000F541C3 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		85752A0B29F708F700F541C3 /* ITC-Assignment-16 */ = {
 			isa = PBXGroup;
 			children = (
+				85752A3D29F7184A00F541C3 /* ViewModel */,
 				85752A3A29F70EFF00F541C3 /* Model */,
 				85752A3729F70DCC00F541C3 /* JSON Model */,
 				85752A0C29F708F700F541C3 /* ITC_Assignment_16App.swift */,
@@ -144,8 +151,18 @@
 		85752A3A29F70EFF00F541C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				85752A3B29F7177E00F541C3 /* APIEndpoint.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		85752A3D29F7184A00F541C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				85752A3E29F7188C00F541C3 /* ListViewModel.swift */,
+				85752A4229F71D1000F541C3 /* PokemonViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85752A3F29F7188C00F541C3 /* ListViewModel.swift in Sources */,
 				85752A0F29F708F700F541C3 /* ContentView.swift in Sources */,
+				85752A4329F71D1000F541C3 /* PokemonViewModel.swift in Sources */,
 				85752A0D29F708F700F541C3 /* ITC_Assignment_16App.swift in Sources */,
 				85752A3929F70E1100F541C3 /* Pokemon.swift in Sources */,
+				85752A3C29F7177E00F541C3 /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
