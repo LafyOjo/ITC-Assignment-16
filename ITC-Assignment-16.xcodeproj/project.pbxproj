@@ -18,6 +18,8 @@
 		85752A3C29F7177E00F541C3 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A3B29F7177E00F541C3 /* APIEndpoint.swift */; };
 		85752A3F29F7188C00F541C3 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A3E29F7188C00F541C3 /* ListViewModel.swift */; };
 		85752A4329F71D1000F541C3 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A4229F71D1000F541C3 /* PokemonViewModel.swift */; };
+		85752A4629F720BB00F541C3 /* netowrkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A4529F720BB00F541C3 /* netowrkManager.swift */; };
+		85752A4829F720E800F541C3 /* networkableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A4729F720E800F541C3 /* networkableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		85752A3B29F7177E00F541C3 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		85752A3E29F7188C00F541C3 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewModel.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/ListViewModel.swift"; sourceTree = "<group>"; };
 		85752A4229F71D1000F541C3 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		85752A4529F720BB00F541C3 /* netowrkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netowrkManager.swift; sourceTree = "<group>"; };
+		85752A4729F720E800F541C3 /* networkableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = networkableProtocol.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/networkableProtocol.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		85752A0B29F708F700F541C3 /* ITC-Assignment-16 */ = {
 			isa = PBXGroup;
 			children = (
+				85752A4429F7208A00F541C3 /* NetworkManager */,
 				85752A3D29F7184A00F541C3 /* ViewModel */,
 				85752A3A29F70EFF00F541C3 /* Model */,
 				85752A3729F70DCC00F541C3 /* JSON Model */,
@@ -163,6 +168,15 @@
 				85752A4229F71D1000F541C3 /* PokemonViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		85752A4429F7208A00F541C3 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				85752A4529F720BB00F541C3 /* netowrkManager.swift */,
+				85752A4729F720E800F541C3 /* networkableProtocol.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +313,8 @@
 				85752A0F29F708F700F541C3 /* ContentView.swift in Sources */,
 				85752A4329F71D1000F541C3 /* PokemonViewModel.swift in Sources */,
 				85752A0D29F708F700F541C3 /* ITC_Assignment_16App.swift in Sources */,
+				85752A4829F720E800F541C3 /* networkableProtocol.swift in Sources */,
+				85752A4629F720BB00F541C3 /* netowrkManager.swift in Sources */,
 				85752A3929F70E1100F541C3 /* Pokemon.swift in Sources */,
 				85752A3C29F7177E00F541C3 /* APIEndpoint.swift in Sources */,
 			);
