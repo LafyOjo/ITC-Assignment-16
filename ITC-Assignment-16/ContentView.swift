@@ -7,19 +7,29 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    @StateObject var pokemonViewModel = PokemonListViewModel()
+
     var body: some View {
         VStack {
-            List(){
-                
+//            List(pokemonViewModel.pokeData, id: \.id) { pokemon in
+//                VStack(alignment: .leading) {
+//                    Text(pokemon.name ?? "")
+//                    Text(pokemon.id ?? "")
+//                }
             }
+            .task {
+                await pokemonViewModel.getListOfPokemons(urlString: APIEndpoint.pkListEndPoint)
+            }
+            .padding()
         }
-        .padding()
     }
-}
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
+    }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
