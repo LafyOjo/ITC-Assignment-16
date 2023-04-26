@@ -20,6 +20,8 @@
 		85752A4629F720BB00F541C3 /* netowrkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A4529F720BB00F541C3 /* netowrkManager.swift */; };
 		85752A4829F720E800F541C3 /* networkableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A4729F720E800F541C3 /* networkableProtocol.swift */; };
 		85752A4A29F7239300F541C3 /* PokemonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A4929F7239300F541C3 /* PokemonDetailViewModel.swift */; };
+		85752A9D29F922C300F541C3 /* PokemonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A9C29F922C300F541C3 /* PokemonCardView.swift */; };
+		85752A9F29F9245000F541C3 /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A9E29F9245000F541C3 /* PokemonListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		85752A4529F720BB00F541C3 /* netowrkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netowrkManager.swift; sourceTree = "<group>"; };
 		85752A4729F720E800F541C3 /* networkableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = networkableProtocol.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/networkableProtocol.swift"; sourceTree = "<group>"; };
 		85752A4929F7239300F541C3 /* PokemonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewModel.swift; sourceTree = "<group>"; };
+		85752A9C29F922C300F541C3 /* PokemonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCardView.swift; sourceTree = "<group>"; };
+		85752A9E29F9245000F541C3 /* PokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 			children = (
 				85752A4229F71D1000F541C3 /* PokemonViewModel.swift */,
 				85752A4929F7239300F541C3 /* PokemonDetailViewModel.swift */,
+				85752A9C29F922C300F541C3 /* PokemonCardView.swift */,
+				85752A9E29F9245000F541C3 /* PokemonListView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -309,11 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85752A9F29F9245000F541C3 /* PokemonListView.swift in Sources */,
 				85752A0F29F708F700F541C3 /* ContentView.swift in Sources */,
 				85752A4329F71D1000F541C3 /* PokemonViewModel.swift in Sources */,
 				85752A0D29F708F700F541C3 /* ITC_Assignment_16App.swift in Sources */,
 				85752A4829F720E800F541C3 /* networkableProtocol.swift in Sources */,
 				85752A4A29F7239300F541C3 /* PokemonDetailViewModel.swift in Sources */,
+				85752A9D29F922C300F541C3 /* PokemonCardView.swift in Sources */,
 				85752A4629F720BB00F541C3 /* netowrkManager.swift in Sources */,
 				85752A3929F70E1100F541C3 /* Pokemon.swift in Sources */,
 				85752A3C29F7177E00F541C3 /* APIEndpoint.swift in Sources */,

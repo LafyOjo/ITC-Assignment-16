@@ -7,56 +7,39 @@
 import Foundation
 
 @MainActor
-class PokemonListViewModel: ObservableObject {
-    private let networkManager: networkableProtocol
-
-    @Published var pokeData = [Datum]()
-    @Published var errorMessage: String = ""
-    @Published var isLoading: Bool = false
-
-    init(networkManager: networkableProtocol = NetworkManager.shared) {
-        self.networkManager = networkManager
+class PokemonViewModel: ObservableObject {
+    @Published var pokemonList = [PokemonDetails]()
+    
+    // initialize Nwetwork
+    var manager: NetworkManager
+    
+    init(manager: NetworkManager) {
+        self.manager = manager
     }
-
-    //func fetchPokemonCards() async {
-//        isLoading = true
-//        do {
-//            try await networkManager.fetchPokemonCards { result in
-//                switch result {
-//                case .success(let response):
-//                    self.pokeData = response
-//                    self.errorMessage = ""
-//                case .failure:
-//                    self.errorMessage = "An error occurred while fetching data."
-//                }
-//            }
-//        } catch {
-//            errorMessage = "An error occurred while fetching data."
-//        }
-//        isLoading = false
-//    }
-
-    func getListOfPokemons(urlString: String) async {
+    
+    func getListOfPokemons(urlString: String) async{
+        // convert URL string to URL
         guard let url = URL(string: urlString) else {
             return
         }
-
         do {
-            let datala = try await networkManager.getDataFromAPI(url: url)
-            print(datala)
-            let pokemondata = try JSONDecoder().decode(Pokemon.self, from: datala)
-            print(pokemondata)
-            pokeData = pokemondata.data
-            print(pokeData)
-        } catch {
+            // initialize async await func to fetch data from Network Manager
+            let data = try await self.manager.getDataFromAPI(url: url)
+            // decode the JSON from raw data
+            let pokemonData = try JSONDecoder().decode(Pokemon.self, from: data)
+            self.pokemonList = pokemonData.data.map { pokemonEntity in
+                PokemonDetails(name: pokemonEntity.name, subtypes: pokemonEntity.subtypes, level: pokemonEntity.level, hp: pokemonEntity.hp, types: pokemonEntity.types, abilities: pokemonEntity.abilities, attacks: pokemonEntity.attacks, weaknesses: pokemonEntity.weaknesses, resistances: pokemonEntity.resistances, number: pokemonEntity.number, artist: pokemonEntity.artist, rarity: pokemonEntity.rarity, nationalPokedexNumbers: pokemonEntity.nationalPokedexNumbers, legalities: pokemonEntity.legalities, images: pokemonEntity.images, tcgplayer: pokemonEntity.tcgplayer, cardmarket: pokemonEntity.cardmarket)
+            }
+            // make your publishable Model match the data returned
+            print(self.pokemonList)
+            
+        }catch let error{
             print(error.localizedDescription)
+            
+            
         }
+        
+        
+        
     }
 }
-
-
-
-
-
-
-

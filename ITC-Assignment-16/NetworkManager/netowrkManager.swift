@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkManager: networkableProtocol {
     static let shared = NetworkManager()
-    private init() {}
+    init() {}
 
     func getDataFromAPI(url:URL) async throws -> Data {
         
@@ -22,18 +22,18 @@ class NetworkManager: networkableProtocol {
         }
     }
     
-    func fetchPokemonCards(completion: @escaping (Result<[Datum], APIError>) -> Void) async {
-        let urlString = "https://api.pokemontcg.io/v2/cards?page=1&pageSize=40"
-
-        guard let url = URL(string: urlString) else { return }
-
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            let decoder = JSONDecoder()
-            let response = try decoder.decode([Datum].self, from: data)
-            completion(.success(response))
-        } catch {
-            completion(.failure(.networkError))
-        }
-    }
+//    func fetchPokemonCards(completion: @escaping (Result<[Datum], APIError>) -> Void) async {
+//        let urlString = "https://api.pokemontcg.io/v2/cards?page=1&pageSize=40"
+//
+//        guard let url = URL(string: urlString) else { return }
+//
+//        do {
+//            let (data, _) = try await URLSession.shared.data(from: url)
+//            let decoder = JSONDecoder()
+//            let response = try decoder.decode([Datum].self, from: data)
+//            completion(.success(response))
+//        } catch {
+//            completion(.failure(.networkError))
+//        }
+//    }
 }
