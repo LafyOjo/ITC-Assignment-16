@@ -25,6 +25,9 @@ final class ITC_Assignment_16Tests: XCTestCase {
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
 
+    func testAPI() throws {
+        
+    }
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
