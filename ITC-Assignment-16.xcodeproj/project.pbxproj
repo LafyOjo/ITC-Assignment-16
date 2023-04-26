@@ -22,6 +22,12 @@
 		85752A4A29F7239300F541C3 /* PokemonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A4929F7239300F541C3 /* PokemonDetailViewModel.swift */; };
 		85752A9D29F922C300F541C3 /* PokemonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A9C29F922C300F541C3 /* PokemonCardView.swift */; };
 		85752A9F29F9245000F541C3 /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752A9E29F9245000F541C3 /* PokemonListView.swift */; };
+		85752AA229F935A200F541C3 /* fileTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 85752AA129F935A200F541C3 /* fileTest.json */; };
+		85752AA429F9379400F541C3 /* testNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752AA329F9379400F541C3 /* testNetworkManager.swift */; };
+		85752AA829F93D0E00F541C3 /* networkErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752AA729F93D0E00F541C3 /* networkErrorEnum.swift */; };
+		85752AAA29F9477000F541C3 /* cardDetailview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85752AA929F9477000F541C3 /* cardDetailview.swift */; };
+		85752AAF29F9803200F541C3 /* Localization - German.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85752AAE29F9803200F541C3 /* Localization - German.strings */; };
+		85752AB129F9806000F541C3 /* Localization - French.strings in Resources */ = {isa = PBXBuildFile; fileRef = 85752AB029F9806000F541C3 /* Localization - French.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +63,16 @@
 		85752A3B29F7177E00F541C3 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		85752A4229F71D1000F541C3 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		85752A4529F720BB00F541C3 /* netowrkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netowrkManager.swift; sourceTree = "<group>"; };
-		85752A4729F720E800F541C3 /* networkableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = networkableProtocol.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/networkableProtocol.swift"; sourceTree = "<group>"; };
+		85752A4729F720E800F541C3 /* networkableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkableProtocol.swift; sourceTree = "<group>"; };
 		85752A4929F7239300F541C3 /* PokemonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewModel.swift; sourceTree = "<group>"; };
 		85752A9C29F922C300F541C3 /* PokemonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCardView.swift; sourceTree = "<group>"; };
 		85752A9E29F9245000F541C3 /* PokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListView.swift; sourceTree = "<group>"; };
+		85752AA129F935A200F541C3 /* fileTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fileTest.json; sourceTree = "<group>"; };
+		85752AA329F9379400F541C3 /* testNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testNetworkManager.swift; sourceTree = "<group>"; };
+		85752AA729F93D0E00F541C3 /* networkErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkErrorEnum.swift; sourceTree = "<group>"; };
+		85752AA929F9477000F541C3 /* cardDetailview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardDetailview.swift; sourceTree = "<group>"; };
+		85752AAE29F9803200F541C3 /* Localization - German.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localization - German.strings"; sourceTree = "<group>"; };
+		85752AB029F9806000F541C3 /* Localization - French.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localization - French.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,8 @@
 		85752A0B29F708F700F541C3 /* ITC-Assignment-16 */ = {
 			isa = PBXGroup;
 			children = (
+				85752AAB29F97F8600F541C3 /* Localisation */,
+				85752AA029F9356800F541C3 /* jsonFile */,
 				85752A4429F7208A00F541C3 /* NetworkManager */,
 				85752A3D29F7184A00F541C3 /* ViewModel */,
 				85752A3A29F70EFF00F541C3 /* Model */,
@@ -135,6 +149,7 @@
 		85752A1D29F708FB00F541C3 /* ITC-Assignment-16Tests */ = {
 			isa = PBXGroup;
 			children = (
+				85752AA129F935A200F541C3 /* fileTest.json */,
 				85752A1E29F708FB00F541C3 /* ITC_Assignment_16Tests.swift */,
 			);
 			path = "ITC-Assignment-16Tests";
@@ -172,6 +187,7 @@
 				85752A4929F7239300F541C3 /* PokemonDetailViewModel.swift */,
 				85752A9C29F922C300F541C3 /* PokemonCardView.swift */,
 				85752A9E29F9245000F541C3 /* PokemonListView.swift */,
+				85752AA929F9477000F541C3 /* cardDetailview.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -181,8 +197,26 @@
 			children = (
 				85752A4529F720BB00F541C3 /* netowrkManager.swift */,
 				85752A4729F720E800F541C3 /* networkableProtocol.swift */,
+				85752AA329F9379400F541C3 /* testNetworkManager.swift */,
+				85752AA729F93D0E00F541C3 /* networkErrorEnum.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		85752AA029F9356800F541C3 /* jsonFile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = jsonFile;
+			sourceTree = "<group>";
+		};
+		85752AAB29F97F8600F541C3 /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				85752AAE29F9803200F541C3 /* Localization - German.strings */,
+				85752AB029F9806000F541C3 /* Localization - French.strings */,
+			);
+			path = Localisation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +323,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85752AB129F9806000F541C3 /* Localization - French.strings in Resources */,
 				85752A1529F708FA00F541C3 /* Preview Assets.xcassets in Resources */,
+				85752AA229F935A200F541C3 /* fileTest.json in Resources */,
+				85752AAF29F9803200F541C3 /* Localization - German.strings in Resources */,
 				85752A1129F708FA00F541C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,11 +352,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85752AAA29F9477000F541C3 /* cardDetailview.swift in Sources */,
 				85752A9F29F9245000F541C3 /* PokemonListView.swift in Sources */,
 				85752A0F29F708F700F541C3 /* ContentView.swift in Sources */,
 				85752A4329F71D1000F541C3 /* PokemonViewModel.swift in Sources */,
 				85752A0D29F708F700F541C3 /* ITC_Assignment_16App.swift in Sources */,
+				85752AA429F9379400F541C3 /* testNetworkManager.swift in Sources */,
 				85752A4829F720E800F541C3 /* networkableProtocol.swift in Sources */,
+				85752AA829F93D0E00F541C3 /* networkErrorEnum.swift in Sources */,
 				85752A4A29F7239300F541C3 /* PokemonDetailViewModel.swift in Sources */,
 				85752A9D29F922C300F541C3 /* PokemonCardView.swift in Sources */,
 				85752A4629F720BB00F541C3 /* netowrkManager.swift in Sources */,

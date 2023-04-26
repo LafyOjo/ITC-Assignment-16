@@ -128,3 +128,4 @@ struct Holofoil: Decodable {
     let low, mid, high, market: Double?
     let directLow: Double?
 }
+

@@ -10,14 +10,14 @@ import Foundation
 class PokemonViewModel: ObservableObject {
     @Published var pokemonList = [PokemonDetails]()
     
-    // initialize Nwetwork
+    // initialize Network
     var manager: NetworkManager
     
     init(manager: NetworkManager) {
         self.manager = manager
     }
     
-    func getListOfPokemons(urlString: String) async{
+    func getListOfPokemons(urlString: String) async {
         // convert URL string to URL
         guard let url = URL(string: urlString) else {
             return
@@ -33,13 +33,12 @@ class PokemonViewModel: ObservableObject {
             // make your publishable Model match the data returned
             print(self.pokemonList)
             
-        }catch let error{
+        } catch let error {
             print(error.localizedDescription)
-            
-            
         }
-        
-        
-        
     }
 }
+
+
+
+

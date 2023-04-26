@@ -27,6 +27,6 @@ struct PokemonCardView: View {
             Text("Level: \(pokemon.level ?? "")")
                 .font(.subheadline)
         }
-        .accessibility(identifer: "pokemonCard")
+        .accessibility(identifier: "pokemonCard")
     }
 }

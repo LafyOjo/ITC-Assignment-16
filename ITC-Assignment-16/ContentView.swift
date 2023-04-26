@@ -7,13 +7,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Create an instance of the PokemonListViewModel
+    @StateObject var viewModel = PokemonViewModel(manager: NetworkManager())
+
     var body: some View {
-        PokemonListView()
+        PokemonListView(viewModel: viewModel)
     }
 }
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
-    }
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

@@ -6,17 +6,64 @@
 //
 
 import XCTest
+@testable import ITC_Assignment_16
 
 final class ITC_Assignment_16Tests: XCTestCase {
 
-    override func setUpWithError() throws {
+    var tnm: TestNetworkManager!
+    var pvm: PokemonViewModel!
+    
+    @MainActor override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        tnm = TestNetworkManager()
+        pvm = PokemonViewModel(manager: tnm)
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        tnm = nil
+        pvm = nil
     }
 
+    func testGetListOfPokemonsSuccess() throws {
+        let expectation = self.expectation(description: "Fetching List of Pokemon")
+        let urlString = "https://api.pokemontcg.io/v2/cards?page=1&pageSize=40"
+        var pokemonList: [PokemonDetails] = []
+
+        pvm.getListOfPokemons(urlString: urlString) { result in
+            switch result {
+            case .success(let list):
+                pokemonList = list
+                XCTAssertGreaterThan(pokemonList.count, 0, "Pokemon list should not be empty")
+                expectation.fulfill()
+
+            case .failure(let error):
+                XCTFail("Fetching list of pokemon failed with error: \(error.localizedDescription)")
+            }
+        }
+
+        waitForExpectations(timeout: 10.0, handler: nil)
+    }
+
+    func testGetListOfPokemonsFailure() throws {
+        let expectation = self.expectation(description: "Fetching List of Pokemon")
+        let urlString = "https://invalid-url.com"
+        var error: NetworkError?
+
+        pvm.getListOfPokemons(urlString: urlString) { result in
+            switch result {
+            case .success:
+                XCTFail("Fetching list of pokemon should have failed")
+            case .failure(let err):
+                error = err
+                XCTAssertNotNil(error, "Error should not be nil")
+                expectation.fulfill()
+            }
+        }
+
+        waitForExpectations(timeout: 10.0, handler: nil)
+    }
+    
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -28,11 +75,6 @@ final class ITC_Assignment_16Tests: XCTestCase {
     func testAPI() throws {
         
     }
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+
 
 }
