@@ -32,7 +32,7 @@ struct PokemonListView: View {
                     }
                 }
             }
-            .navigationTitle(NSLocalizedString("Pokemon Cards", comment: ""))
+            .navigationTitle(Text(LocalizedStringKey("Pokemon Cards")))
             .alert(isPresented: $showingAlert, content: {
                 Alert(title: Text(NSLocalizedString("Error", comment: "")), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             })

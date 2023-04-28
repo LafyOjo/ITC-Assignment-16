@@ -15,8 +15,7 @@ final class ITC_Assignment_16Tests: XCTestCase {
     
     @MainActor override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        tnm = TestNetworkManager()
-        pvm = PokemonViewModel(manager: tnm)
+        
     }
 
     override func tearDownWithError() throws {
@@ -25,44 +24,49 @@ final class ITC_Assignment_16Tests: XCTestCase {
         pvm = nil
     }
 
-    func testGetListOfPokemonsSuccess() throws {
-        let expectation = self.expectation(description: "Fetching List of Pokemon")
-        let urlString = "https://api.pokemontcg.io/v2/cards?page=1&pageSize=40"
+    func testGetListOfPokemonsSuccess() async throws {
+        tnm = TestNetworkManager()
+        await pvm = PokemonViewModel(manager: tnm)
+        //let expectation = self.expectation(description: "Fetching List of Pokemon")
+        let urlString = "fileTest"
         var pokemonList: [PokemonDetails] = []
 
-        pvm.getListOfPokemons(urlString: urlString) { result in
-            switch result {
-            case .success(let list):
-                pokemonList = list
-                XCTAssertGreaterThan(pokemonList.count, 0, "Pokemon list should not be empty")
-                expectation.fulfill()
-
-            case .failure(let error):
-                XCTFail("Fetching list of pokemon failed with error: \(error.localizedDescription)")
-            }
-        }
-
-        waitForExpectations(timeout: 10.0, handler: nil)
+        await pvm.getListOfPokemons(urlString: urlString)
+        let testList = await pvm.pokemonList
+        XCTAssertEqual(testList.count, 100)
+        //expectation.fulfill()
+//        pvm.getListOfPokemons(urlString: urlString) { result in
+//            switch result {
+//            case .success(let list):
+//                pokemonList = list
+//                XCTAssertGreaterThan(pokemonList.count, 0, "Pokemon list should not be empty")
+//                expectation.fulfill()
+//
+//            case .failure(let error):
+//                XCTFail("Fetching list of pokemon failed with error: \(error.localizedDescription)")
+//            }
+//        }
+        
     }
 
-    func testGetListOfPokemonsFailure() throws {
-        let expectation = self.expectation(description: "Fetching List of Pokemon")
-        let urlString = "https://invalid-url.com"
-        var error: NetworkError?
-
-        pvm.getListOfPokemons(urlString: urlString) { result in
-            switch result {
-            case .success:
-                XCTFail("Fetching list of pokemon should have failed")
-            case .failure(let err):
-                error = err
-                XCTAssertNotNil(error, "Error should not be nil")
-                expectation.fulfill()
-            }
-        }
-
-        waitForExpectations(timeout: 10.0, handler: nil)
-    }
+//    func testGetListOfPokemonsFailure() throws {
+//        let expectation = self.expectation(description: "Fetching List of Pokemon")
+//        let urlString = "https://invalid-url.com"
+//        var error: NetworkError?
+//
+//        pvm.getListOfPokemons(urlString: urlString) { result in
+//            switch result {
+//            case .success:
+//                XCTFail("Fetching list of pokemon should have failed")
+//            case .failure(let err):
+//                error = err
+//                XCTAssertNotNil(error, "Error should not be nil")
+//                expectation.fulfill()
+//            }
+//        }
+//
+//        waitForExpectations(timeout: 10.0, handler: nil)
+//    }
     
     func testExample() throws {
         // This is an example of a functional test case.

@@ -11,9 +11,9 @@ class PokemonViewModel: ObservableObject {
     @Published var pokemonList = [PokemonDetails]()
     
     // initialize Network
-    var manager: NetworkManager
+    var manager: networkableProtocol
     
-    init(manager: NetworkManager) {
+    init(manager: networkableProtocol) {
         self.manager = manager
     }
     

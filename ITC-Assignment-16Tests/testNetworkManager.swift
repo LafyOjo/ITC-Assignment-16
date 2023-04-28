@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import ITC_Assignment_16
 
 class TestNetworkManager: networkableProtocol {
     func getDataFromAPI(url: URL) async throws -> Data {
